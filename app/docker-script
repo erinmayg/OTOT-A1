@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Build the image
+# docker build -t <image-name> <Dockerfile path>
+docker build -t erinmayg/node-web-app .
+
+# List all the images
+docker images
+
+# Run the container
+docker run -p 3000:8080 -d --name node-app erinmayg/node-web-app 
+

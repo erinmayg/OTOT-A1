@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  nodeserver:
+    container_name: node-web-app
+    build:
+      context: ./app
+    ports:
+      - '3000:8080'
+  nginx:
+    container_name: nginx-rev-proxy
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - '80:80'
